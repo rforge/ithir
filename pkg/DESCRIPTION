@@ -8,5 +8,5 @@ Maintainer: Brendan Malone <brendan.malone@sydney.edu.au>
 Description: A collection of functions and algorithms specific to pedometrics
 Depends: R (>= 3.0.1)
 Imports: methods,aqp, GSIF, raster, gam, snow, plyr, rgdal, sp
-License: USYD
+License: GPL-2
 LazyData: no
