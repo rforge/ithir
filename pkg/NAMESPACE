@@ -1,6 +1,7 @@
 import("methods")
 import("aqp")
 import("GSIF")
+import("snow")
 exportMethods(ea_spline)
 exportMethods(dissever)
 export(square)
