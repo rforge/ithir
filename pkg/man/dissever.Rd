@@ -34,7 +34,7 @@ library(gam)
 library(snow)
 library(rgdal)
 library(raster)
-setwd("C:/temp")
+
 
 #Map to be downscaled
 data(edgeTarget_C)
