@@ -1,6 +1,7 @@
 \name{dissever}
 \docType{methods}
 \alias{dissever}
+\alias{dissever,RasterStack, RasterLayer-method}
 \title{Spatial downscaling using generalised additive models}
 \description{Algorithm performs spatial downscaling of coarse grid mapping to fine grid mapping using predictive covariates and a GAM (generalised additive model)}
 \usage{
