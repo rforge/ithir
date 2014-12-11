@@ -5,7 +5,7 @@ Version: 1.0
 Date: 2014-12-07
 Author: Brendan Malone
 Maintainer: Brendan Malone <brendan.malone@sydney.edu.au>
-Description: A collection of R functions and algorithms specific to pedometrics
+Description: A collection of functions and algorithms specific to pedometrics
 Depends: R (>= 3.0.1)
 Imports: methods,aqp, GSIF, raster, gam
 License: USYD
