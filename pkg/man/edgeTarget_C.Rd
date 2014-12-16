@@ -1,6 +1,7 @@
 \name{1km resolution soil carbon map of the Edgeroi District, NSW (S1)}
 \docType{data}
 \alias{edgeroi SOC 1km}
+\alias{target}
 \title{Subset of the 1km resolution soil carbon map of the Edgeroi District, NSW}
 \description{A \code{RasterLayer} of a subset of the 1km SOC map for the Edgeroi District, NSW. It portrays soil carbon stock for the 0-30cm depth interval only}
 \usage{data(edgeTarget_C)}
@@ -22,6 +23,7 @@
 }
 \examples{
 library(ithir)
+library(raster)
 
 data(edgeTarget_C)
 target
