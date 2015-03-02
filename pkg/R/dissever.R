@@ -80,14 +80,14 @@ setMethod('dissever', signature(r2 = "RasterStack",c.grid = "RasterLayer"),
               
               
               #calculate adjustment factor
-              c.dat$AF<- -99999
-              c.dat$AF[which(complete.cases(c.dat))]<- xx$C_grid/xx$F_grid 
-              c.dat[c.dat == -99999] <- NA
+              xx$AF<- -99999
+              xx$AF[which(complete.cases(xx))]<- xx$C_grid/xx$F_grid 
+              xx[xx == -99999] <- NA
               
               
               #make adjustment factor raster
               fs<- paste("disseverOuts/",paste("iter_",zz,sep=""),sep="")
-              AF.grid<- writeRaster(rasterFromXYZ(c.dat[,c(2,3,5)]),filename=paste(fs,"AF1_coarse.tif",sep="_"),format="GTiff",progress=F,overwrite=T)
+              AF.grid<- writeRaster(rasterFromXYZ(xx[,c(2,3,6)]),filename=paste(fs,"AF1_coarse.tif",sep="_"),format="GTiff",progress=F,overwrite=T)
               
               #fine grid
               AF.grid_ds<- resample(AF.grid, r2[[1]],method="ngb", filename=paste(fs,"AF1_fine.tif",sep="_"),format="GTiff",progress=F,overwrite=T)
@@ -115,7 +115,7 @@ setMethod('dissever', signature(r2 = "RasterStack",c.grid = "RasterLayer"),
               
               #criteria                           
               message("RMSE = ",round(diogRMSE[zz,2],3))
-              if (zz >= 3) {
+              if (zz >= 5) {
                 FF<- mean(abs(diogRMSE[zz-2,2]-diogRMSE[zz-1,2])+ abs(diogRMSE[zz-1,2]-diogRMSE[zz,2]) + abs(diogRMSE[zz-2,2]-diogRMSE[zz,2]))
                 if (FF <= thresh) {break}} 
               map1<- map2
