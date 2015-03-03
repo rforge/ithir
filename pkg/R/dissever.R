@@ -21,8 +21,8 @@ setMethod('dissever', signature(r2 = "RasterStack",c.grid = "RasterLayer"),
             
             
             #resample coarse grids to fine grid
-            c.grid_ds<- resample(c.grid, r2[[1]],method="ngb", filename="disseverOuts/edgeroi_C_fine_Initialisation.tif",format="GTiff",progress=F,overwrite=T)
-            c.gridCELL_ds<- resample(c.gridCELL, r2[[1]],method="ngb", filename="disseverOuts/cellNumbers_fine.tif",format="GTiff",progress=F,overwrite=T) 
+            c.grid_ds<- resample(c.grid, r2[[1]],method="ngb", filename="disseverOuts/Initialisation_fineRes.tif",format="GTiff",progress=F,overwrite=T)
+            c.gridCELL_ds<- resample(c.gridCELL, r2[[1]],method="ngb", filename="disseverOuts/cellNumbers_fineRes.tif",format="GTiff",progress=F,overwrite=T) 
             
             #Make a stack of the coarse grid prediction, cell numbers and covariates
             r1<- stack(c.grid_ds,c.gridCELL_ds)  
