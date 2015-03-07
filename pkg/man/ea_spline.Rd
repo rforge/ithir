@@ -38,6 +38,7 @@
 
 \examples{
 library(aqp)
+library(GSIF)
 library(plyr)
 library(sp)
 
@@ -60,12 +61,11 @@ str(ORCDRC.s)
 
 ## Example with multiple soil profiles.
 ## Make some fake, but reasonable profiles:
-rand.prof <- ldply(1:100, random_profile, n=c(6, 7, 8), n_prop=1, method='LPP')
+rand.prof <- ldply(1:10, random_profile, n=c(3, 4, 5), n_prop=1, method='LPP')
 ## promote to SPC and plot
 depths(rand.prof ) <- id ~ top + bottom
 plot(rand.prof , color='p1')
 ## fit MP spline by profile
 m <- ea_spline(rand.prof , 'p1')
-str(m)
 }
 \keyword{methods}
