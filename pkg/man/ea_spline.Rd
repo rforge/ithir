@@ -3,7 +3,7 @@
 \alias{ea_spline}
 \alias{ea_spline,SoilProfileCollection-method}
 \title{Fits a mass preserving spline}
-\description{This function is specific for soil profile data. A continous spline function is fitted upon information recieved about a target soil property at specified depths intervals or soil horizons. The spline however has the unique property of maintaining the integrity of the observed information i.e. the spline has mass preserving properties. (This function is the same implementation as in \code{GSIF}. It just has a different name)}
+\description{This function is specific for soil profile data. A continous spline function is fitted upon information recieved about a target soil property at specified depths intervals or soil horizons. The spline however has the unique property of maintaining the integrity of the observed information i.e. the spline has mass preserving properties.}
 
 \usage{
 \S4method{ea_spline}{SoilProfileCollection}(obj, var.name, 
@@ -13,22 +13,23 @@
   \item{obj}{object of class \code{"SoilProfileCollection"}} 
   \item{var.name}{character; target variable name (must be a numeric variable)}     
   \item{lam}{numeric; lambda the smoothing parameter}
-  \item{d}{numeric; standard depths}
+  \item{d}{numeric; standard depths that are used to extract values from fitted spline i.e harmonising depths}
   \item{vlow}{numeric; smallest value of the target variable (smaller values will be replaced)}
   \item{vhigh}{numeric; highest value of the target variable (larger values will be replaced)}
   \item{show.progress}{logical; Display the progress bar?}
 }
 \value{Returns a list with four elements:
   \describe{
-   \item{\code{idcol}}{site ID column}
-   \item{\code{var.fitted}}{matrix; are spline-estimated values of the target variable at observed depths}
-   \item{\code{var.std}}{data frame; are spline-estimated values of the target variable at standard depths} 
-   \item{\code{var.1cm}}{matrix; are spline-estimated values of the target variable using the 1 cm increments}   
+   \item{\code{harmonised}}{data frame; are spline-estimated values of the target variable at standard depths}
+   \item{\code{obs.preds}}{data frame; are observed values together with associated spline predictions for each profile at each depth. Only returns those profiles where a spline was fitted ie where horizons are greater than 2 in number}
+   \item{\code{var.1cm}}{matrix; are spline-estimated values of the target variable using the 1 cm increments}  
+   \item{\code{tmse}}{matrix; True mean square error estimate between observed profiles and associated fitted splines.} 
+    
 }
 }
 \note{Target variable needs to be a numeric vector measured at least 2 horizons for the spline to be fitted. Profiles with 1 horizon are accepted and processed as per output requirements, but no spline is fitted as such. Only positive numbers for upper and lower depths can be accepted. It is assumed that soil variables collected per horizon refer to block support i.e. they represent averaged values for the whole horizon. This operation can be time-consuming for large data sets.}
 
-\author{ Brendan Malone and Tomislav Hengl }
+\author{ Brendan Malone }
 \references{
 \itemize{
   \item Bishop, T.F.A., McBratney, A.B., Laslett, G.M., (1999) \href{http://dx.doi.org/10.1016/S0016-7061(99)00003-8}{Modelling soil attribute depth functions with equal-area quadratic smoothing splines}. Geoderma, 91(1-2): 27-45. 
@@ -38,7 +39,6 @@
 
 \examples{
 library(aqp)
-library(GSIF)
 library(plyr)
 library(sp)
 
@@ -67,5 +67,6 @@ depths(rand.prof ) <- id ~ top + bottom
 plot(rand.prof , color='p1')
 ## fit MP spline by profile
 m <- ea_spline(rand.prof , 'p1')
+str(m)
 }
 \keyword{methods}
