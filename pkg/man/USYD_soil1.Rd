@@ -5,7 +5,7 @@
 \description{A soil information \code{dataframe} for 29 soil profiles. Each row is a horizon or depth interval observation for a given soil profile. Various soil attribute information is attibuted to each observation }
 \usage{data(USYD_soil1)}
 \format{
-\code{hvPoints250} is 166 row \code{dataframe} with identifier, soil depth and soil attribute information labelled in respective columns. 
+\code{USYD_soil1} is 166 row \code{dataframe} with identifier, soil depth and soil attribute information labelled in respective columns. 
 }
 \details{This data frame is a typical soil information table}
 
