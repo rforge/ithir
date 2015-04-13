@@ -1,7 +1,6 @@
 \name{plot_soilProfile}
 \docType{methods}
 \alias{plot_soilProfile}
-\alias{plot soil profile data}
 \title{plot soil profile data}
 \description{This is a simple function for plotting soil profile data that is supplied in \code{dataframe} form.}
 
