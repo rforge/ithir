@@ -21,7 +21,7 @@
 \value{Returns a list with four elements:
   \describe{
    \item{\code{harmonised}}{data frame; are spline-estimated values of the target variable at standard depths}
-   \item{\code{obs.preds}}{data frame; are observed values together with associated spline predictions for each profile at each depth. Only returns those profiles where a spline was fitted ie where horizons are greater than 2 in number}
+   \item{\code{obs.preds}}{data frame; are observed values together with associated spline predictions for each profile at each depth.}
    \item{\code{var.1cm}}{matrix; are spline-estimated values of the target variable using the 1 cm increments}  
    \item{\code{tmse}}{matrix; True mean square error estimate between observed profiles and associated fitted splines.} 
     
