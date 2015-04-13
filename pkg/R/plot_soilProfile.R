@@ -6,7 +6,7 @@
 
 
 ##### Function for plotting raw soil profile data values
-plot_soilProfile <- function(vals, depths, data, label= "") {
+plot_soilProfile <- function(data, vals, depths, label= "") {
   matX<- matrix(NA, nrow=nrow(data), ncol= 4)
   matY<- matrix(NA, nrow=nrow(data), ncol= 4)
   for (i in 1: nrow(data)){
