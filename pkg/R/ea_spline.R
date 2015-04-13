@@ -69,7 +69,9 @@ setMethod('ea_spline', signature(obj = "SoilProfileCollection"),
               ############################################################################################################################################################
               ### routine for handling profiles with one observation
               if (n == 1)
-              {xfit<- as.matrix(t(c(1:mxd))) # spline will be interpolated onto these depths (1cm res)
+              {dave[cnt:(cnt-1+nrow(subs)),1:4]<- subs
+               dave[cnt:(cnt-1+nrow(subs)),5]<- y
+               xfit<- as.matrix(t(c(1:mxd))) # spline will be interpolated onto these depths (1cm res)
                nj<- max(v)
                if (nj > mxd)
                {nj<- mxd}
@@ -92,6 +94,7 @@ setMethod('ea_spline', signature(obj = "SoilProfileCollection"),
                  else
                  {yave[st,cj]<- mean(yfit[,xd1:xd2])}   # average of the spline at the specified depth intervals
                  yave[st,cj+1]<- max(v)} #maximum soil depth
+               cnt<- cnt+nrow(subs)
                ##################################
               }
               # End of single observation profile routine
