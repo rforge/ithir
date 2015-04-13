@@ -4,7 +4,7 @@
 \title{plot soil profile data}
 \description{This is a simple function for plotting soil profile data that is supplied in \code{dataframe} form.}
 
-\usage{plot_soilProfile(data, vals, depths, label)}
+\usage{plot_soilProfile(data, vals, depths, label="")}
 \arguments{
   \item{data}{dataframe; Usually a typical soil information data frame with identifier and soil depth labelled columns, followed by one or more columns of soil attribute or even soil categorical data.} 
   \item{vals}{vector; Would generally point to a column of \code{data}, and is the soil attribute value that needs to be ploted.}     
