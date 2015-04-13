@@ -3,7 +3,7 @@
 # Contributions  : Tomislav Hengl (tom.hengl@wur.nl); Tom Bishop (t.bishop@usyd.edu.au); David Rossiter (david.rossiter@wur.nl)
 # Status         : working
 # Note           : Mass-preserving spline explained in detail in [http://dx.doi.org/10.1016/S0016-7061(99)00003-8];
-# Note           : Need some cleaning up! 
+ 
 
 if(!isGeneric("ea_spline")){
   setGeneric("ea_spline", function(obj, ...){standardGeneric("ea_spline")})
@@ -40,6 +40,7 @@ setMethod('ea_spline', signature(obj = "SoilProfileCollection"),
             #combined data frame for observations and spline predictions
             dave<- d.dat[1,]
             dave$predicted<- 0
+            dave$FID<- 0
             dave<- dave[0,]
             
             
@@ -71,6 +72,7 @@ setMethod('ea_spline', signature(obj = "SoilProfileCollection"),
               if (n == 1)
               {dave[cnt:(cnt-1+nrow(subs)),1:4]<- subs
                dave[cnt:(cnt-1+nrow(subs)),5]<- y
+               dave[cnt:(cnt-1+nrow(subs)),6]<- st
                xfit<- as.matrix(t(c(1:mxd))) # spline will be interpolated onto these depths (1cm res)
                nj<- max(v)
                if (nj > mxd)
@@ -105,6 +107,7 @@ setMethod('ea_spline', signature(obj = "SoilProfileCollection"),
               else  {    
                 ###############################################################################################################################################################
                 dave[cnt:(cnt-1+nrow(subs)),1:4]<- subs
+                dave[cnt:(cnt-1+nrow(subs)),6]<- st
                 ## ESTIMATION OF SPLINE PARAMETERS
                 np1 <- n+1  # number of interval boundaries
                 nm1 <- n-1
