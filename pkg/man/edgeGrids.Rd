@@ -1,4 +1,4 @@
-\name{edgeroi covariates (S1)}
+\name{edgeroi covariates (subset)}
 \docType{data}
 \alias{edgeroi covariates}
 \alias{edgeGrids}
