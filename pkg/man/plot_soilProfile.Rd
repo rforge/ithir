@@ -13,7 +13,7 @@
 }
 \value{Function returns a labeled plot of the soil profile information. The length of the bars corresponds to the value of the soil variable being plotted.}
 
-\note{This function is really designed to plot one soil profile at a time. Would need to be inserted into another function if plotting of a collection of soil profiles is required}
+\note{This function is really designed to plot one soil profile at a time. Would need to be inserted into another function if plotting of a collection of soil profiles is required. }
 
 \author{Brendan Malone}
 
