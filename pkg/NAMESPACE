@@ -13,9 +13,11 @@ importFrom("tripack", tri.mesh, convex.hull)
 importFrom("matrixStats", colMaxs)
 importFrom("sp", spDistsN1, SpatialPolygonsDataFrame, coordinates, SpatialLines, SpatialLinesDataFrame, SpatialLinesLengths, Lines, Line    )
 
+
 exportMethods(ea_spline)
 exportMethods(dissever)
 export(bbRaster)
 export(wires)
 export(plot_soilProfile)
 export(plot_ea_spline)
+export(goof)
