@@ -36,7 +36,7 @@ goofcat<- function(observed = NULL, predicted = NULL, conf.mat, imp=FALSE){
        rownames(fmat)<- rownames(c.Mat)
        colnames(fmat)<- colnames(c.Mat)
        for (i in 1:nrow(c.Mat)){
-         fmat[i,]<- c(c.Mat[,i])}
+         fmat[i,]<- c(c.Mat[i,])}
        return(fmat)}
      conf.mat<- cfuM(df, obsMat)
      
