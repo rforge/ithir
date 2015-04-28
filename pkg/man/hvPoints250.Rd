@@ -8,7 +8,7 @@
 \code{hvPoints250} is 250 row \code{dataframe} with the first 2 columns indicating the projected coordinate locations. The coordinate reference system is WGS 84 Zone 56. 
 }
 \details{The area in question is the Hunter Wine Country Private Irrigation District (HWCPID), situated in the Lower Hunter Valley, NSW (32.83S 151.35E), and covers an area of approximately 220 km2. The HWCPID is approximately 140 km north of Sydney, NSW, Australia. Climatically, the HWCPID is situated in a temperate climatic zone, and experiences warm humid summers, and relatively cooler yet also humid winters. Rainfall is mostly uniformly distributed throughout the year. On average the HWCPID receives just over 750 mm of rainfall annually. In terms of landuse, an expansive viticultural industry is situated in the area and is possibly most widespread
-of rural industries, followed by dryland agricultural grazing systems.The projection for the \code{RasterLayer} is WGS 84 Zone 56. See Malone et al. (2014) for more detailed information about the area and research that has been conducted there by the University of Sydney.}
+of rural industries, followed by dryland agricultural grazing systems.}
 
 \references{
 \itemize{
