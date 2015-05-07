@@ -2,7 +2,7 @@
 \docType{methods}
 \alias{goof}
 \title{Goodness of fit measures}
-\description{This function performs a number of model diagnostic goodness of fit measures which include the root mean square error (RMSE), mean square error (MSE),  prediction bias, coefficient of determination (R squared), concordance correlation coefficient (CCC), ratio of performance to deviation (RPD), ratio of performance to interquartile distance (RPIQ), and residual variance estimates. These goodness of fit measures are used in both digital soil mapping and soil chemometric studies to test the relative performance of competing models.}
+\description{This function performs a number of model goodness of fit measures which include the root mean square error (RMSE), mean square error (MSE),  prediction bias, coefficient of determination (R squared), concordance correlation coefficient (CCC), ratio of performance to deviation (RPD), ratio of performance to interquartile distance (RPIQ), and residual variance estimates. These goodness of fit measures are used in both digital soil mapping and soil chemometric studies to test the relative performance of competing models.}
 
 \usage{goof(observed,predicted, plot.it = FALSE, type="DSM")}
 \arguments{
