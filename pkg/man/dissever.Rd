@@ -5,8 +5,9 @@
 \title{Spatial downscaling using generalised additive models}
 \description{Algorithm performs spatial downscaling of coarse grid mapping to fine grid mapping using predictive covariates and a GAM (generalised additive model)}
 \usage{
-\S4method{dissever}{RasterStack, RasterLayer}(r2, c.grid, ss = 0.5, cores = 8, thresh = 0.01)
+\S4method{dissever}{r2 = "RasterStack", c.grid = "RasterLayer}(r2, c.grid, ss = 0.5, cores = 8, thresh = 0.01)
 }
+
 \arguments{
   \item{r2}{object of class \code{"RasterStack"}: Raster stack of predictive covariates} 
   \item{c.grid}{object of class \code{"RasterLayer"}: The map that needs to be downscaled}   
