@@ -19,7 +19,7 @@
 \author{Brendan Malone}
 \references{
 \itemize{
-\item Bellon-Maurel, V., Fernandez-Ahumada, E., Palagos, B., Roger, J., McBratney, A., (2010) \href{http://dx.doi:10.1016/j.trac.2010.05.006}{Critical review of chemometric indicators commonly used for assessing the quality of the prediction of soil attributes by NIR spectroscopy}. Trends in Analytical Chemistry, 29(9): 1073-1081.
+\item Bellon-Maurel, V., Fernandez-Ahumada, E., Palagos, B., Roger, J., McBratney, A., (2010) \href{http://dx.doi.org/10.1016/j.trac.2010.05.006}{Critical review of chemometric indicators commonly used for assessing the quality of the prediction of soil attributes by NIR spectroscopy}. Trends in Analytical Chemistry, 29(9): 1073-1081.
 \item Hastie, T., Tibshirani, R., Friedman, J., (2009)  The Elements of Statisitcal Learning. Springer Series in Statistics.}
 }
 
