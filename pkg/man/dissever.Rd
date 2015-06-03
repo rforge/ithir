@@ -32,7 +32,6 @@ This version of dissever has not facilitated the ability to incorporate the pred
 
 \examples{
 library(gam)
-library(snow)
 library(rgdal)
 library(raster)
 
