@@ -8,6 +8,6 @@ Maintainer: Brendan Malone <brendan.malone@sydney.edu.au>
 Description: A collection of functions and algorithms specific to pedometrics
 Depends: R (>= 3.0.1)
 Imports: methods,aqp, raster, gam, plyr, rgdal, sp, spatstat, maptools, tripack, matrixStats
-Suggests: snow
+Suggests: snow, MASS
 License: GPL-2
 LazyData: no
