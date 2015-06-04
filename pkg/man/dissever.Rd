@@ -43,6 +43,6 @@ data(edgeTarget_C)
 data(edgeGrids)
 
 #Run dissever
-dissever(r2=edgeGrids, c.grid=target, ss=0.75, cores= 2)
+dissever(r2=edgeGrids, c.grid=target, ss=0.75, cores= 2, thresh = 0.01)
 }
 \keyword{methods}
