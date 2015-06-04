@@ -35,8 +35,8 @@ setMethod('dissever', signature(r2 = "RasterStack",c.grid = "RasterLayer"),
             
             #take a sample for modelling
             r3<- stack(r1,r2)
-            sr<-as.data.frame(sampleRandom(r3,ceiling(ncell(r3[[1]])*ss))) # sample random grid cells
-            
+            sr<-sampleRandom(r3,ceiling(ncell(r3[[1]])*ss)) # sample random grid cells
+            sr<- as.data.frame(sr)
             
             #Fit model (Initialisation)
             gm1 <- as.formula(unclass(gm1))
@@ -47,9 +47,10 @@ setMethod('dissever', signature(r2 = "RasterStack",c.grid = "RasterLayer"),
             names(map1)<- "map1"
             
             #coarse grid table
-            c.dat<- as.data.frame(c.grid)
+            c.dat<- getValues(c.grid)
             c.datXY<- xyFromCell(c.grid, cell=seq(1,ncell(c.grid)), spatial=FALSE)
             c.dat<- cbind(seq(1,ncell(c.grid)),c.datXY,c.dat)
+            c.dat<- as.data.frame(c.dat)
             names(c.dat)[1]<- "cell"
             c.dat_ref<- c.dat[which(complete.cases(c.dat)),] #complete cases  
             
@@ -58,7 +59,8 @@ setMethod('dissever', signature(r2 = "RasterStack",c.grid = "RasterLayer"),
               
               #stack predictions and cell numbers (fine grid)
               r4<- stack(c.gridCELL_ds,map1)
-              r4.dat<-as.data.frame(r4)
+              r4.dat<-getValues(r4)
+              r4.dat<- as.data.frame(r4.dat)
               r4.dat<- r4.dat[which(complete.cases(r4.dat)),] #complete cases
               downFit<-aggregate(r4.dat$map1,list(group=r4.dat$cellNumbers_coarse),mean) # average within coarse grid
               
