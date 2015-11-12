@@ -7,7 +7,7 @@ Author: Brendan Malone
 Maintainer: Brendan Malone <brendan.malone@sydney.edu.au>
 Description: A collection of functions and algorithms specific to pedometrics
 Depends: R (>= 3.0.1)
-Imports: methods,aqp, raster, gam, plyr, rgdal, sp, spatstat, maptools, tripack, matrixStats, parallel, digest, RColorBrewer, reshape, scales, Hmisc, plotrix
+Imports: methods,aqp, raster, gam, plyr, rgdal, sp, spatstat, maptools, tripack, matrixStats, parallel, RColorBrewer
 Suggests: MASS, snow
 License: GPL-2
 LazyData: no

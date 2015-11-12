@@ -126,7 +126,7 @@ setMethod('dissever', signature(r2 = "RasterStack",c.grid = "RasterLayer"),
             diogRMSE<- as.data.frame(diogRMSE)
             names(diogRMSE)<- c("lowerCI_RMSE", "RMSE", "upperCI_RMSE")
             endCluster()
-            plot(map2)
+            #plot(map2)
             return(diogRMSE)})
 
 #end script

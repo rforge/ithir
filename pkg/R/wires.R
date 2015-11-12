@@ -42,7 +42,7 @@ wires<- function(points, bb, nos.transects){
   W <- ripras(bb, shape="rectangle") # boundary window of the study area
   X <- as.ppp(points, W=W) # point pattern class
   Y <- delaunay(X) # perforn the delaunay triangulation
-  plot(Y, main="Delaunay Triangulation") # plot the delaunay triangulation
+  #plot(Y, main="Delaunay Triangulation") # plot the delaunay triangulation
   
   
   # Write the delaunay triangulation image to a shape file
@@ -85,8 +85,8 @@ wires<- function(points, bb, nos.transects){
   
   
   #plotting
-  plot(Y,col="white", main="sampling frame")
-  lines(c(rand.ch$x,rand.ch$x[1]), c(rand.ch$y,rand.ch$y[1]),col="red",lwd=1)
+  #plot(Y,col="white", main="sampling frame")
+  #lines(c(rand.ch$x,rand.ch$x[1]), c(rand.ch$y,rand.ch$y[1]),col="red",lwd=1)
   
   ####Begin the sample...
   # From PolyDatr selct a point at random
@@ -106,7 +106,7 @@ wires<- function(points, bb, nos.transects){
     ww<-which(PolyDatr$X %in% sPoint[,2] & PolyDatr$Y %in% sPoint[,3])
     PolyDatr<- PolyDatr[-ww,] # vertex dataframe with sPoint points removed
     transectPath[1,]<- as.matrix(sPoint)
-    points(sPoint$X, sPoint$Y, pch=16, col="blue")
+    #points(sPoint$X, sPoint$Y, pch=16, col="blue")
     
     #get the nearest neighbours to sPoint ie find tPoint
     nn<- spDistsN1((as.matrix(PolyDatr[,2:3])), as.matrix(sPoint[,2:3]), longlat = FALSE)  # the distance from function
@@ -114,7 +114,7 @@ wires<- function(points, bb, nos.transects){
     dd<-dfDATA[with(dfDATA, order(nn)), ][1:100,] #get the nearest neighbours to sPoint
     tPoint<-dd[dd$nn != 0,][1,1:3] # SECOND POINT
     transectPath[2,]<- as.matrix(tPoint)
-    points(tPoint$X, tPoint$Y, pch=16, col="red")
+    #points(tPoint$X, tPoint$Y, pch=16, col="red")
     logt<- 0.5*(sum(CHpoints[,1]==tPoint[,2])+sum(CHpoints[,2]==tPoint[,3])) # see whether tPoint is a CHpoint
     if (logt >= 1)
     {i=i-1;stop}else {uPoint<- maxPoint(polyDat, tPoint, sPoint) # get the uPoint
@@ -131,10 +131,10 @@ wires<- function(points, bb, nos.transects){
                           uPoint<- maxPoint(polyDat, tPoint, sPoint) # get the uPoint
                           logu<- 0.5*(sum(CHpoints[,1]==uPoint[,2])+sum(CHpoints[,2]==uPoint[,3])) # see whether uPoint is a CHpoint
                           if (logu >= 1)
-                          {points(uPoint$X, uPoint$Y, pch=16, col="red")
+                          {#points(uPoint$X, uPoint$Y, pch=16, col="red")
                            transectPath[dod,]<- as.matrix(uPoint)
                            transList[[tr]]<- transectPath[1:dod,]
-                           lines(transectPath[1:dod,2],transectPath[1:dod,3],col="green",lwd=1 )
+                           #lines(transectPath[1:dod,2],transectPath[1:dod,3],col="green",lwd=1 )
                            break} else {#points(uPoint$X, uPoint$Y, pch=16, col="blue")
                              transectPath[dod,]<- as.matrix(uPoint)}
                           dod<-dod+1}}}}

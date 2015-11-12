@@ -55,6 +55,7 @@ depths(prof1) <- id ~ top + bottom
 site(prof1) <- ~ lon + lat + FAO1988 
 coordinates(prof1) <- ~ lon + lat
 proj4string(prof1) <- CRS("+proj=longlat +datum=WGS84")
+
 ## fit a spline:
 ORCDRC.s <- ea_spline(prof1, var.name="ORCDRC")
 str(ORCDRC.s)
@@ -64,7 +65,7 @@ str(ORCDRC.s)
 rand.prof <- ldply(1:10, random_profile, n=c(3, 4, 5), n_prop=1, method='LPP')
 ## promote to SPC and plot
 depths(rand.prof ) <- id ~ top + bottom
-plot(rand.prof , color='p1')
+##Not run## plot(rand.prof , color='p1')
 ## fit MP spline by profile
 m <- ea_spline(rand.prof , 'p1')
 str(m)
