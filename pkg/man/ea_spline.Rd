@@ -1,16 +1,14 @@
 \name{ea_spline}
 \docType{methods}
 \alias{ea_spline}
-\alias{ea_spline,SoilProfileCollection-method}
+\alias{ea_spline}
 \title{Fits a mass preserving spline}
 \description{This function is specific for soil profile data. A continous spline function is fitted upon information recieved about a target soil property at specified depths intervals or soil horizons. The spline however has the unique property of maintaining the integrity of the observed information i.e. the spline has mass preserving properties.}
 
-\usage{
-\S4method{ea_spline}{SoilProfileCollection}(obj, var.name, 
-        lam = 0.1, d = t(c(0,5,15,30,60,100,200)), vlow = 0, vhigh = 1000, show.progress=TRUE)
-}
+\usage{ea_spline(obj, var.name, lam = 0.1, d = t(c(0,5,15,30,60,100,200)), vlow = 0, vhigh = 1000, show.progress=TRUE)}
+
 \arguments{
-  \item{obj}{object of class \code{"SoilProfileCollection"}} 
+  \item{obj}{Can be an object of class \code{"data.frame"} or \code{"SoilProfileCollection"}} 
   \item{var.name}{character; target variable name (must be a numeric variable)}     
   \item{lam}{numeric; lambda the smoothing parameter}
   \item{d}{numeric; standard depths that are used to extract values from fitted spline i.e harmonising depths}
@@ -42,6 +40,14 @@ library(aqp)
 library(plyr)
 library(sp)
 
+
+#Fit spline 
+data(oneProfile)
+class(oneProfile)
+sp.fit<- ea_spline(oneProfile, var.name="C.kg.m3.")
+
+
+#Using a SoilProfileCollection
 ## sample profile from Nigeria:
 lon = 3.90; lat = 7.50; id = "ISRIC:NG0017"; FAO1988 = "LXp" 
 top = c(0, 18, 36, 65, 87, 127) 
@@ -56,18 +62,9 @@ site(prof1) <- ~ lon + lat + FAO1988
 coordinates(prof1) <- ~ lon + lat
 proj4string(prof1) <- CRS("+proj=longlat +datum=WGS84")
 
-## fit a spline:
+## fit spline:
 ORCDRC.s <- ea_spline(prof1, var.name="ORCDRC")
 str(ORCDRC.s)
 
-## Example with multiple soil profiles.
-## Make some fake, but reasonable profiles:
-rand.prof <- ldply(1:10, random_profile, n=c(3, 4, 5), n_prop=1, method='LPP')
-## promote to SPC and plot
-depths(rand.prof ) <- id ~ top + bottom
-##Not run## plot(rand.prof , color='p1')
-## fit MP spline by profile
-m <- ea_spline(rand.prof , 'p1')
-str(m)
 }
 \keyword{methods}
