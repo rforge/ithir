@@ -27,7 +27,7 @@ wires<- function(points, bb, nos.transects){
     pn$tu<-spDistsN1((as.matrix(pn[,2:3])), as.matrix(tPoint[,2:3]), longlat = FALSE)  # the distance from sPoint and possible vertex
     
     # Derive angle
-    #cos C    = (a2 + b2 ??? c2)/2ab 
+    #cos C    = (a2 + b2 ?? c2)/2ab 
     pn$deg<-0
     pn$rati<- 0
     for (j in 1: nrow(pn)){ 
